@@ -1,0 +1,20 @@
+<div>
+  <h1>{{pollObject.question}}</h1>
+  <select [(ngModel)]="selOption">
+    <option *ngFor="let x of pollObject.options" value="{{x.value}}">{{x.text}}</option>
+  </select>
+  
+  <button (click)="submitVote()">Submit vote</button>
+
+</div>
+
+<div style="display: block;">
+  <canvas baseChart 
+    [datasets]="barChartData"
+    [labels]="barChartLabels"
+    [options]="barChartOptions"
+    [plugins]="barChartPlugins"
+    [legend]="barChartLegend"
+    [chartType]="barChartType">
+  </canvas>
+</div>
